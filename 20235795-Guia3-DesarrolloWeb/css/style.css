@@ -13,15 +13,17 @@ body{
 header{
     background: #16A085;
     height: 130px;
-    /*Header con posicionamiento fijo
-    position: fixed;
-    overflow: hidden;*/
+    position: sticky;
+    top: 0;
+    overflow: hidden;
 }
 
 footer{
     margin-top: 20px;
     background: #16A085;
     height: 50px;
+    position: sticky;
+    bottom: 0;
 }
 
 header div, footer div{
@@ -55,8 +57,7 @@ section article{
     height: 340px;
     width: 32.33%;
     float: left;
-    position: relative;
-    margin: 0.5% 0.5%; /*Margen */
+    margin: 0.5%; /*Margen */
     border: 2px dashed #16A085;
     padding: 1%;
     box-sizing: border-box;
