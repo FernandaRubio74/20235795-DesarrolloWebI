@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+*{
+	margin: 0;
+	padding: 1px 0;
+	font-family: 'Roboto', sans-serif;
+	
+}
+
+
+.envoltorio{
+	overflow: hidden;
+	width:80%;
+	margin:0 auto;
+}
+
+.logo{
+	position:absolute;
+    display: block;
+    padding: 30px;
+}
+
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background-color: #12488c;
+}
+
+header{
+    width: 100%;
+	height: 100px;
+	background-color: #323a45;
+    color: white;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 10;
+    display: flex;
+	overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    float: left;
+	padding: 0 45px;
+}
+
+
+header nav a{
+    color: #ffffff;
+    display: flex;
+    padding: 0 2.5em;
+    text-decoration: none;
+	display: inline-block;
+    padding: 45px;
+    align-items: flex-end;
+}
+
+nav a:hover{
+    background: #12488c;
+}
+
+/*Primer nivel*/
+nav>ul{
+    background-color:  #323a45;
+    width: 100%;
+    overflow: hidden;
+	list-style: none;
+
+}
+
+nav>ul>li{
+    float: left;
+	text-transform: uppercase;
+    display: inline;
+}
+
+nav>ul>li>ul{
+    position: absolute;
+    display: none;
+}
+
+nav>ul>li:hover ul{
+    display: block;
+    background-color: #12488c;
+}
+
+nav>ul>li>ul>li{
+    background-color: #323a45;
+}

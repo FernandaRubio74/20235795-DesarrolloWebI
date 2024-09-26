@@ -1,0 +1,44 @@
+
+nav ul{
+    list-style-type: none;
+}
+
+nav li{
+    line-height: 2.5em;
+}
+
+nav a{
+    color: #ffffff;
+    display: block;
+    padding: 0 2.5em;
+    text-decoration: none;
+}
+
+nav a:hover{
+    background: #12488c;
+}
+
+/*Primer nivel*/
+nav>ul{
+    background-color:  #323a45;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav>ul>li{
+    float: right;
+}
+
+nav>ul>li>ul{
+    position: absolute;
+    display: none;
+}
+
+nav>ul>li:hover ul{
+    display: block;
+    background-color: #12488c;
+}
+
+nav>ul>li>ul>li{
+    background-color: #323a45;
+}
