@@ -39,7 +39,6 @@ const limpiarForm = () => {
     cmbPais.value = 0;
     inputDireccion.value = "";
     inputNombrePais.value = "";
-
     inputNombre.focus();
 };
 
@@ -77,7 +76,6 @@ const addPaciente = function () {
         mensaje.innerHTML = "Se ha registrado un nuevo paciente";
         //Llamando al componente de Bootstrap
         toast.show();
-
         //Limpiando formulario
         limpiarForm();
     } else {
@@ -104,10 +102,10 @@ function imprimirFilas() {
             <td>${element[4]}</td>
             <td>${element[5]}</td>
             <td>
-                <button id=idBtnEditar${contador} type="button" class="btn btn-primary" alt="Eliminar">
+                <button id="idBtnEditar${contador}" type="button" class="btn btn-primary" alt="Editar">
                     <i class="bi bi-pencil-square"></i>
                 </button>
-                <button id=idBtnEliminar${contador} type="button" class="btn btn-danger" alt="Editar">
+                <button id=idBtnEliminar${contador} type="button" class="btn btn-danger" alt="Eliminar">
                     <i class="bi bi-trash-fill"></i>
                 </button>
             </td>
@@ -118,8 +116,7 @@ function imprimirFilas() {
 }
 
 const imprimirPacientes = () => {
-    let $table = `
-    <div class="table-responsive">
+    let $table = `<div class="table-responsive">
         <table class="table table-striped table-hover table-bordered">
             <tr>
                 <th scope="col" class="text-center" style="width:5%">#</th>
@@ -165,6 +162,7 @@ const addPais = () => {
 };
 
 // Agregando eventos a los botones y utilizando funciones tipo flecha
+
 buttonLimpiarPaciente.onclick = () => {
     limpiarForm();
 };
@@ -182,6 +180,7 @@ buttonAgregarPais.onclick = () => {
 };
 
 // Se agrega el focus en el campo nombre país del modal
+
 idModal.addEventListener("shown.bs.modal", () => {
     inputNombrePais.value = "";
     inputNombrePais.focus();
@@ -189,5 +188,6 @@ idModal.addEventListener("shown.bs.modal", () => {
 
 // Ejecutar función al momento de cargar la página HTML
 limpiarForm();
+
 
 

@@ -32,11 +32,14 @@ function generarEstudiantes() {
         convertir = parseFloat(calificacion);
       } while (isNaN(convertir) || convertir < 0 || convertir > 10);
   
+
+      arrayEstudiante.push(new Array(estudiante, parseFloat(calificacion)));
+/*
       // Asignando los valores al arreglo
       arrayEstudiante[contador - 1] = new Array(
         estudiante,
-        parseFloat(calificacion).toFixed(2)
-      );
+        parseFloat(calificacion)
+      );*/
       contador++;
     }
   
@@ -57,7 +60,8 @@ function generarEstudiantes() {
   
       //verificación de calificación más alta
       if (nota > calificacionAlta) {
-        posicion = indice;
+        posicion = estudiante;
+        calificacionAlta=nota;
       }
   
       //calculando el promedio

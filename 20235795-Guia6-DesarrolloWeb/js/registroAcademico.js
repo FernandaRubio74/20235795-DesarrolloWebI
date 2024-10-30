@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Creando funciones
     function addEstudiantes() {
-        const inputCarnet = document.querySelector("#inputCarnet").value.toString().toUpperCase();
-        const inputNombre = document.querySelector("#inputNombre").value.toString().toUpperCase();
-        const inputApellidos = document.querySelector("inputApellidos").value.toString().toUpperCase();
+        const inputCarnet = document.querySelector("#inputCarnet").value.toString().trim().toUpperCase();
+        const inputNombre = document.querySelector("#inputNombre").value.toString().trim().toUpperCase();
+        const inputApellidos = document.querySelector("#inputApellidos").value.toString().trim().toUpperCase();
 
         if (inputCarnet != "" && inputNombre != "" && inputApellidos != "") {
             arrayEstudiantes.push(
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             table += "<tr>";
             table += "<th scope='col' style='width: 5%;'>#</th>";
             table += "<th scope='col' style='width: 15%;'>Carnet</th>";
-            table += "<th scope='col' style='width: 15%;'>Nombres</th>";
+            table += "<th scope='col'>Nombres</th>";
             table += "<th scope='col'>Apellidos</th>";
             table += "</tr>";
             table += "</thead>";

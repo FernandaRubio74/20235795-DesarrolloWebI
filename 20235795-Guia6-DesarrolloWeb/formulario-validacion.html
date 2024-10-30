@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style-form.css" rel="stylesheet" />
+    <title>Formulario de Estudiante</title>
+
+</head>
+
+<body>
+        <div class="container">
+            <h2>Ficha Estudiantil</h2>
+            <form id="form-Estudiante">
+                <label for="carnet">Carnet:</label>
+                <input type="text" id="carnet" name="carnet" maxlength="5" placeholder="El formato es: AE003 (2 letras, 3 números)" required>
+
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Solo se admiten letras" required>
+
+                <label for="dui">Número de DUI:</label>
+                <input type="text" id="dui" name="dui" maxlength="10" placeholder="El formato es: 21212121-2" required>
+
+                <label for="nit">Número de NIT:</label>
+                <input type="text" id="nit" name="nit" maxlength="17" placeholder="El formato es: 1111-112222-333-4" required>
+
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="error" class="error"></div>
+            <div id="success" class="success"></div>
+        </div>
+        <script src="./js/formulario-validacion.js"></script>
+</body>
+
+</html>

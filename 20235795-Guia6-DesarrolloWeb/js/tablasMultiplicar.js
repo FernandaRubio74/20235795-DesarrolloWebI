@@ -18,11 +18,11 @@ function calcularTabla(){
         do{
             let resultado = contador * inputTabla;
             tabla += `<div class="row text-center">`;
-            tabla += `<div class="col-md-1 column"><h3>${contador}</h3></div>`;
-            tabla += `<div class="col-md-1 column-green"><h3>x</h3></div>`;
-            tabla += `<div class="col-md-1 column"><h3>${inputTabla}</h3></div>`;
-            tabla += `<div class="col-md-1 column-green"><h3>=</h3></div>`;
-            tabla += `<div class="col-md-1 column"><h3>${resultado}</h3></div>`;
+            tabla += `<div class="col-md-1 colum"><h3>${contador}</h3></div>`;
+            tabla += `<div class="col-md-1 colum-green"><h3>x</h3></div>`;
+            tabla += `<div class="col-md-1 colum"><h3>${inputTabla}</h3></div>`;
+            tabla += `<div class="col-md-1 colum-green"><h3>=</h3></div>`;
+            tabla += `<div class="col-md-1 colum"><h3>${resultado}</h3></div>`;
             tabla += `</div>`;
 
             //incrementamos el valor del contador para que podamos salir del do while
