@@ -4,6 +4,7 @@ const newForm = document.getElementById("idNewForm");
 // ACCEDIENDO A LA REFERENCIA DE BOTONES
 const buttonCrear = document.getElementById("idBtnCrear");
 const buttonAddElemento = document.getElementById("idBtnAddElement");
+const buttonValidar = document.getElementById("idBtnValidar")
 
 
 // ACCEDIENDO AL VALOR DEL SELECT PARA DETERMINAR EL TIPO DE ELEMENTO A CREAR
@@ -107,14 +108,6 @@ const newRadioCheckbox = function (newElemento) {
 }
 
 const newInput = function (newElemento) {
-    //Validacion de elemento existente
-    const elementoExist = document.getElementById(`id${nombreElemento.value}`);
-    if (elementoExist) {
-        errorMessage.textContent = "El ID ya existe. No se puede repetir controles con este ID.";
-    } else {
-        errorMessage.textContent = ""; // Limpiar mensaje de error si el ID es único
-    }
-
     // Creando elementos de tipo = text, number, date y password
     let addElemento =
         newElemento == "textarea"
@@ -170,11 +163,17 @@ buttonCrear.onclick = () => {
 buttonAddElemento.onclick = () => {
     if (nombreElemento.value != "" && tituloElemento.value != "") {
         let elemento = cmbElemento.value;
-
-        if (elemento = "select") {
+        //Validacion de elemento existente
+        const elementoExist = document.getElementById(`id${nombreElemento.value}`);
+        if (elementoExist) {
+            alert("El ID ya existe. No se puede repetir controles con este ID.");
+        }
+        else if (elemento == "select") {
             newSelect();
         } else if (elemento == "radio" || elemento == "checkbox") {
             newRadioCheckbox(elemento);
+        } else if (elemento === "color" || elemento === "email" || elemento === "text" || elemento === "number" || elemento === "date" || elemento === "password") {
+            newInput(elemento);
         } else {
             newInput(elemento);
         }
@@ -182,6 +181,27 @@ buttonAddElemento.onclick = () => {
         alert("Faltan campos por completas");
     }
 };
+
+
+//Agregamos evento click para validar el formulario
+buttonValidar.onclick = () => {
+    let formValido = true;
+    const elementos = newForm.querySelectorAll("input, textarea, select");
+    elementos.forEach(elemento => {
+        if (elemento.type === "radio" || elemento.type === "checkbox") {
+            if (!elemento.checked) {
+                formValido = false;
+                alert(`Debe seleccionar una opcion valida para:  ${elemento.id}`);
+            }
+        } else if (elemento.value === "") {
+            formValido = false;
+            alert("El campo esta vacio");
+        } else {
+            alert ("Todo esta en orden")
+        }
+    })
+}
+
 
 // Agregando evento para el modal de bootstrap
 document.getElementById("idModal").addEventListener("shown.bs.modal", () => {

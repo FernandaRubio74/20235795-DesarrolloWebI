@@ -11,6 +11,22 @@ const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
 // PARA IMPRIMIR EL RESULTADO
 const bodyModal = document.getElementById("idBodyModal");
 
+
+//Recopilando los datos del formulario
+const nombre = document.getElementById("idNombre").value;
+const apellidos = document.getElementById("idApellidos");
+const fechaNacimiento = document.getElementById("idFechaNac").value;
+const correo = document.getElementById("idCorreo").value;
+const password = document.getElementById("idPassword").value;
+const intereses = document.querySelectorAll("input[type='checkbox']:checked");
+const password2 = document.getElementById("idPasswordRepetir").value;
+const carrera = document.getElementById("idRdCarrera").value;
+const pais = document.getElementById("idCmPais").value;
+
+//Validaciones
+// validar que no esten vacios
+
+
 // Recorrer el formulario
 const recorrerFormulario = function () {
     let totText = 0;
@@ -98,6 +114,3 @@ const recorrerFormulario = function () {
 button.onclick = () => {
     recorrerFormulario();
 };
-
-
-
