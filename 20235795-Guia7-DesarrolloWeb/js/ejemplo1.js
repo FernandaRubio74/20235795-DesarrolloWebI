@@ -5,6 +5,7 @@ const newForm = document.getElementById("idNewForm");
 const buttonCrear = document.getElementById("idBtnCrear");
 const buttonAddElemento = document.getElementById("idBtnAddElement");
 
+
 // ACCEDIENDO AL VALOR DEL SELECT PARA DETERMINAR EL TIPO DE ELEMENTO A CREAR
 const cmbElemento = document.getElementById("idCmbElemento");
 
@@ -35,7 +36,7 @@ const newSelect = function () {
     addElemento.setAttribute("class", "form-select");
 
     // creando option para el select
-    for (let i=1; i<= 10; i++){
+    for (let i = 1; i <= 10; i++) {
         let addOption = document.createElement("option");
         addOption.value = i;
         addOption.innerHTML = `Opcion ${i}`;
@@ -66,7 +67,7 @@ const newSelect = function () {
     newForm.appendChild(labelId);
 
     //creando el DIV que sera hijo del nuevo formulario
-    newForm.appendCh(divElemento);
+    newForm.appendChild(divElemento);
 };
 
 const newRadioCheckbox = function (newElemento) {
@@ -106,6 +107,14 @@ const newRadioCheckbox = function (newElemento) {
 }
 
 const newInput = function (newElemento) {
+    //Validacion de elemento existente
+    const elementoExist = document.getElementById(`id${nombreElemento.value}`);
+    if (elementoExist) {
+        errorMessage.textContent = "El ID ya existe. No se puede repetir controles con este ID.";
+    } else {
+        errorMessage.textContent = ""; // Limpiar mensaje de error si el ID es único
+    }
+
     // Creando elementos de tipo = text, number, date y password
     let addElemento =
         newElemento == "textarea"
@@ -123,7 +132,7 @@ const newInput = function (newElemento) {
     labelElemento.setAttribute("for", `id${nombreElemento.value}`);
 
     // Creando icono para el label
-    let iconLabel = document.createElement("I");
+    let iconLabel = document.createElement("i");
     iconLabel.setAttribute("class", "bi bi-tag");
 
     // Creando texto para label
@@ -164,7 +173,7 @@ buttonAddElemento.onclick = () => {
 
         if (elemento = "select") {
             newSelect();
-        }else if (elemento == "radio" || elemento == "checkbox") {
+        } else if (elemento == "radio" || elemento == "checkbox") {
             newRadioCheckbox(elemento);
         } else {
             newInput(elemento);
